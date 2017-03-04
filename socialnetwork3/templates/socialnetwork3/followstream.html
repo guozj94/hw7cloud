@@ -1,0 +1,40 @@
+{% extends "socialnetwork3/socialnetworkbase.html" %}
+
+{% block page-title %}
+Following
+{% endblock %}
+
+{% block follow %}
+			<ol>  <!-- insert all message HERE -->
+				{% for message in messages %}
+				<li>
+					<form method="post" action="{% url 'profile' %}">
+						<div class="row" style="background: white; margin-bottom: 10px; width: 100%;">
+						<img src="{% url 'photo' message.user_id %}" width="100px" height="100px" style="margin: 10px;">
+						<div class="column" style="width: 100%"> <!-- this is data from django database -->
+							<div class="row" id="personal">
+								<p>{{message.user__first_name}}</p>
+								<p>&nbsp</p>
+								<p>{{message.user__last_name}}</p>
+								<p>&nbsp &nbsp</p>
+								<button type="submit" name="username" id="username" value="{{message.user__username}}">{{message.user__username}}</button>
+								<p>&nbsp &nbsp</p>
+								<p style="color: grey; font-weight: 300;">{{message.date}}</p>
+								<p>&nbsp &nbsp &nbsp</p>
+								<button type="submit" name="follow" id="username" value="Follow">Follow</button>
+								<p>&nbsp &nbsp &nbsp</p>
+								<button type="submit" name="unfollow" id="username" value="Unfollow">Unfollow</button>
+								<input type="hidden" name="followuser" value="{{message.user__username}}">
+							</div>
+							<div class="row" id="content">
+								<p>{{message.post}}</p>
+							</div>
+						</div>
+						</div>
+						{% csrf_token %}
+
+					</form>
+				</li>
+				{% endfor %}
+			</ol>
+{% endblock %}

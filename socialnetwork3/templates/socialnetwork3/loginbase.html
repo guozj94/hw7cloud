@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/socialnetwork3/login.css">
+	<link rel="stylesheet" href="/static/socialnetwork3/register.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+	<title>SocialNet</title>
+</head>
+<body>
+	<div class="column-container">
+		<div class="row" id="placeholder"></div>
+		<div class="row" id="welcome">
+			<h1>Welcome to Our Social Web</h1>
+		</div>
+		{% block register-title %}
+		{% endblock %}
+
+		{% for error in errors %}
+		<div class="error">
+			{{error}}
+		</div>
+		{% endfor %}
+
+		{% block content %}
+		{% endblock %}
+
+	</div>
+</body>
+</html>

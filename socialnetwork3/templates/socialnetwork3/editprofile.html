@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/socialnetwork3/global.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+	<title>Edit Profile</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li>
+					<a href="">Welcome to Social Web</a>
+				</li>
+				<li>
+					<a href="{% url 'global' %}">Home</a>
+				</li>
+				<li>
+					<a href="{% url 'editprofile' %}">Edit Profile</a>
+				</li>
+				<li>
+					<a href="{% url 'followstream' %}">Following</a>
+				</li>
+				<li>
+					<a href="{% url 'logout' %}">Logout</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="container">
+		<div class="row" id="register-info">
+		<form method="post" enctype="multipart/form-data" action="{% url 'editprofile' %}">
+			<table width="600">
+				{{form}}
+			</table>
+			<input type="submit" value="Save">
+			{% csrf_token %}
+		</form>
+		</div>
+	</div>
+</body>
+</html>

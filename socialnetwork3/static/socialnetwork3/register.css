@@ -1,0 +1,35 @@
+html {
+	font-family: "Open Sans";
+	box-sizing: border-box;
+	color: white;
+}
+body {
+	background-image: url("bgimg2.png");
+	background-size: 100vw auto;
+	background-repeat: no-repeat;
+}
+#placeholder {
+	height: 20vh;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+table {
+	width: "900";
+}
+#register-button {
+	margin-top: 5vh;
+	border-color: rgb(64,66,87);
+	border: solid 2px white;
+	background-color: rgba(255,255,255,0);
+	width: 200px;
+	height: 40px;
+	padding: 10px;
+	font-size: 18px;
+	color: white;
+}
+#register-button:hover {
+	background: rgba(112,123,48,0.8);
+}

@@ -1,0 +1,15 @@
+{% extends "socialnetwork3/loginbase.html" %}
+
+{% block content %}
+	<div class="row" id="register-info">
+		<form method="post" action="{% url 'register' %}">
+			<table width="400">
+				{{form}}
+			</table>
+			{% csrf_token %}
+			<div class="row">	
+				<input type="submit" value="Register" id="register-button">
+			</div>
+		</form>
+	</div>
+{% endblock %}

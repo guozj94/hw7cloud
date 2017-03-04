@@ -1,0 +1,135 @@
+@import 'reset.css';
+
+html {
+	font-family: "Open Sans";
+	box-sizing: border-box;
+}
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(237,242,246)
+}
+
+header nav {
+    width: 100%;
+    background-color: rgb(64,67,86);
+    margin: 0;
+}
+header nav ul {
+}
+
+header nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+header nav ul li a {
+    background: rgb(64,67,86);
+    color: white;
+    padding: 1rem;
+    display: block;
+    width: auto;
+    height: auto;
+    position: relative;
+    text-align: center;
+    -webkit-transition: .5s ease-in-out background;
+    -moz-transition: .5s ease-in-out background;
+    -ms-transition: .5s ease-in-out background;
+    -o-transition: .5s ease-in-out background;
+    transition: 1s ease-in-out background;
+}
+
+header nav ul li a:hover {
+    background: #fc0;
+    transition: 0.3s ease-in-out background;
+    -webkit-transition: 0.3s ease-in-out background;
+    -moz-transition: 0.3s ease-in-out background;
+    -ms-transition: 0.3s ease-in-out background;
+}
+header a {
+	width: 100%;
+    text-decoration: none;
+}
+
+header nav {
+    width: 100%;
+}
+.container {
+	margin-top: 60px;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	width: 80vw;
+	/*border: solid 2px black;*/
+}
+.left-col-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 30%;
+	/*border: solid 2px black;*/
+	padding: 20px;
+}
+.right-col-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 70%;
+	/*border: solid 2px black;*/
+	padding: 20px;
+}
+.column {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	background: white;
+	border-color: rgb(238,239,243);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 20px;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+#input-content {
+	width: 100%;
+	height: 30px;
+}
+#new-post {
+	padding-bottom: 20px;
+}
+#new-post-submit {
+	background: rgb(64,68,86);
+	color: white;
+	border: none;
+	height: 30px;
+	width: 90px;
+}
+#new-post-submit:hover {
+	background: rgb(246,208,33);
+	color: white;
+	border: none;
+	height: 30px;
+	width: 90px;
+}
+#personal {
+}
+#content {
+	padding-top: 10px;
+}
+#username {
+	background: none;
+	border: none;
+	padding: 0;
+	font-size: 14px;
+	color: rgb(64,68,86);
+}
+#username:hover {
+	color: rgb(246,208,33);
+}

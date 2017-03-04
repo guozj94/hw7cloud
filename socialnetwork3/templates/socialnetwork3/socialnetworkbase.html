@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	{% block updatestreamjs %}{% endblock %}
+	<link rel="stylesheet" href="/static/socialnetwork3/global.css">
+	<link rel="stylesheet" href="/static/socialnetwork3/profile.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+	<title>{% block page-title %}{% endblock %}</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li>
+					<a href="">Welcome to Social Web</a>
+				</li>
+				<li>
+					<a href="{% url 'global' %}">Home</a>
+				</li>
+				<li>
+					<a href="{% url 'editprofile' %}">Edit Profile</a>
+				</li>
+				<li>
+					<a href="{% url 'followstream' %}">Following</a>
+				</li>
+				<li>
+					<a href="{% url 'logout' %}">Logout</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="error" style="color: red;"></div>
+	{% for error in errors %}
+	<p style="color: red;">{{error}}</p>
+	{% endfor %}
+	<div class="container">
+		<div class="left-col-container">
+			<div class="column">
+				<div class="row">
+					<img src="{% url 'photo' profile.user_id %}" width="150px" height="150px">
+				</div>
+				<br>
+				<table>
+					<tr>
+						<td>First Name:</td>
+						<td>{{profile.user__first_name}}</td>
+					</tr>
+					<tr>
+						<td>Last Name:</td>
+						<td>{{profile.user__last_name}}</td>
+					</tr>
+					<tr>
+						<td>Age:</td>
+						<td>{{profile.age}}</td>
+					</tr>
+					<tr>
+						<td>Bio:</td>
+						<td>{{profile.bio}}</td>
+					</tr>
+				</table>	
+			</div>
+		</div>
+
+		<div class="right-col-container">
+			{% block profile %}
+			{% endblock %}
+			{% block follow %}
+			{% endblock %}
+			{% block post-new %}
+			{% endblock %}
+			<ol id="posts">  <!-- insert all message HERE -->
+			
+			</ol>
+
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "socialnetwork3/socialnetworkbase.html" %}
+
+{% block updatestreamjs %}
+<script type="text/javascript" src="/static/socialnetwork3/updatestream.js"></script>
+{% endblock %}
+{% block page-title %}
+SocialNet
+{% endblock %}
+
+{% block post-new %}
+
+	<div class="column">
+		<h4>New Post:<br><br></h4>
+		<div class="row" id="new-post">
+			<input type="text" name="input-content" id="input-content">
+		</div>
+		<div class="row">
+			<button value="Post" id="new-post-submit">Post</button>
+		</div>
+	</div>
+{% endblock %}

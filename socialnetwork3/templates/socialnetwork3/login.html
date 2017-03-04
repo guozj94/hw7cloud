@@ -1,0 +1,29 @@
+{% extends "socialnetwork3/loginbase.html" %}
+
+{% block content %}
+	<div class="row" id="login-info">
+		<form method="post" action="{% url 'login' %}">
+			<table>
+				<tr>
+					<td>{{ form.username.label_tag }}</td>
+					<td>{{ form.username }}</td>
+				</tr>
+				<tr>
+					<td>{{ form.password.label_tag }}</td>
+					<td>{{ form.password }}</td>
+				</tr>
+			</table>
+			<div class="row">	
+				<input type="submit" value="Login" id="login-button">
+			</div>
+			<input type="hidden" name="next" value="{{ next }}" />
+			{% csrf_token %}
+		</form>
+
+	</div>
+	<div class="row">
+			<form action="{% url 'register' %}" method="get">
+				<input type="submit" id="register-button" value="Register">
+			</form>
+		</div>
+{% endblock %}
